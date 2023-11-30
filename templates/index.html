@@ -2,4 +2,24 @@
     <input type="text" name="query" placeholder="Enter your SQL query here">
     <input type="submit" value="Execute">
 </form>
+
+<table>
+    <thead>
+      <tr>
+        {% for column in column_names %}
+          <th>{{ column }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in result %}
+        <tr>
+          {% for value in row %}
+            <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+   </table>
+   
    
